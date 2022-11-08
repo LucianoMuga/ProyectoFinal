@@ -1,0 +1,15 @@
+{% extends 'Proyect/base.html' %}
+{% block titulo %}Detail:{% endblock titulo %}
+{% block contenido %}
+<ul>
+    <li>Nombre: {{empleado.name}}. </li>
+    <li>Apellido: {{empleado.last_name}}. </li>
+    <li>Sector: {{empleado.area}}. </li>
+    <li>Fecha de Ingreso: {{empleado.date}}. </li>
+    <li>E-mail: {{empleado.email}}. </li>
+</ul>
+    <img height="255" src="{{ empleado.avatar.url }}"/>
+    <ul>
+    <a type="button" class="btn btn-primary" style="border-radius: 30px;" href= "{% url 'list-empleado'%}">Volver</a>
+    </ul>
+ {% endblock contenido %}

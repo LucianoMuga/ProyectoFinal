@@ -1,0 +1,38 @@
+{% extends 'Proyect/base.html' %}
+{% block titulo %} Empleados: {% endblock %}
+{% block contenido %}
+
+
+<ul>
+
+  {% block buscar %} {% endblock %}
+  
+  {% for empleado in object_list %}
+  <div class="div">
+  <ul> Nombre: {{empleado.name}}, Apellido: {{empleado.last_name}}, Area: {{empleado.area}}</ul>
+  <ul>
+    <img height="255" src="{{ empleado.avatar.url }}"/>
+  </ul>
+          <ul>
+          <a type="button" class="btn btn-primary" style="border-radius: 30px;" href="{% url "actualizar-empleado" empleado.id %}">actualizar</a>
+          </ul>
+          <ul>
+          <a type="button" class="btn btn-primary" style="border-radius: 30px;" href="{% url "borrar-empleado" empleado.id %}">Borrar</a>
+        </ul>
+        <ul>
+          <a type="button" class="btn btn-primary" style="border-radius: 30px;" href="{% url "detail-empleado" empleado.id %}">Detail</a>
+        </ul>
+          {% endfor %}  
+  <div>  
+</ul>
+{% comment %} {% if user.is_authenticated %} {% endcomment %}
+<a type="button" class="btn btn-primary" style="border-radius: 30px;" href="{% url "crear-empleado" %}">Cargar nuevo empleado</a>
+<a type="button" class="btn btn-primary" style="border-radius: 30px;" href="{% url "about-empleado" %}">About view</a>
+<a type="button" class="btn btn-primary" style="border-radius: 30px;" href="{% url "profile-update" user.id %}">Profile Update</a>
+<a type="button" class="btn btn-primary" style="border-radius: 30px;" href="{% url 'logout-empleado' %}">Salir</a>
+{% comment %} {% else %}
+<a href="{% url 'login-empleado' %}"> Ingresar</a>
+{% endif %} {% endcomment %}
+
+  
+{% endblock %}

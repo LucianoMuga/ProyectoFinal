@@ -1,0 +1,12 @@
+{% extends 'Proyect/base.html' %}
+{% block contenido %}
+
+    <form method="post">
+        {% csrf_token %}
+        "¿ Estás seguro de borrar a {{ empleado.name }} ?"
+        <input style="border-radius: 30px;" type="submit" value="SI">
+        <a type="button" class="btn btn-primary" style="border-radius: 30px;" href= "{% url 'list-empleado'%}">Volver</a>
+    </form>
+
+{% endblock contenido %}
+
