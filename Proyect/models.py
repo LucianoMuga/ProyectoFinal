@@ -6,6 +6,7 @@ class Empleado(models.Model):
     
     name = models.CharField(max_length = 50)
     last_name = models.CharField(max_length = 50)
+    age = models.IntegerField()
     area = models.CharField(max_length = 50)
     legajo = models.IntegerField()
     contacto = models.IntegerField()

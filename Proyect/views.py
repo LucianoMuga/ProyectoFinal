@@ -18,7 +18,7 @@ class CreateEmpleado(SuccessMessageMixin ,CreateView):
     model = Empleado
     form = Empleado
     success_url = reverse_lazy("list-empleado")
-    fields = ["name", "last_name", "area", "legajo", "contacto", "email", "date", "avatar"]
+    fields = ["name", "last_name", "age", "area", "legajo", "contacto", "email", "date", "avatar"]
     
 class DeleteEmpleado(DeleteView):
     model = Empleado
@@ -27,7 +27,7 @@ class DeleteEmpleado(DeleteView):
 class ActualizarEmpleado(UpdateView):
     model = Empleado
     success_url = reverse_lazy("list-empleado")
-    fields = ["name", "last_name", "area", "legajo", "contacto", "email", "date", "avatar"]
+    fields = ["name", "last_name", "age", "area", "legajo", "contacto", "email", "date", "avatar"]
 
 class DetailEmpleado(DetailView):
     model = Empleado
