@@ -7,6 +7,8 @@ class Empleado(models.Model):
     name = models.CharField(max_length = 50)
     last_name = models.CharField(max_length = 50)
     area = models.CharField(max_length = 50)
+    legajo = models.IntegerField()
+    contacto = models.IntegerField()
     email = models.EmailField(max_length = 200)
     date = models.DateField()
     avatar = models.ImageField(upload_to = "post", null = True , blank = True)
