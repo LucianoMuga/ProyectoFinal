@@ -1,6 +1,7 @@
 {% extends 'Proyect/base.html' %}
 {% block titulo %}Detail:{% endblock titulo %}
 {% block contenido %}
+<div class="container-fluid">
 <ul>
     <li>Nombre: {{empleado.name}}. </li>
     <li>Apellido: {{empleado.last_name}}. </li>
@@ -12,4 +13,5 @@
     <ul>
     <a type="button" class="btn btn-primary" style="border-radius: 30px;" href= "{% url 'list-empleado'%}">Volver</a>
     </ul>
+</div>
  {% endblock contenido %}
