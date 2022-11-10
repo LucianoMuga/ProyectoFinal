@@ -1,4 +1,4 @@
-Pre-requisitos tener instalado:
+Pre-requisitos que hay que  tener instalado:
 
     .Python 3.10.6
 
@@ -6,32 +6,54 @@ Pre-requisitos tener instalado:
 
     .Creador de entornos virtuales para Python
 
-Para el correcto funcionamiento de la app el cual es un registro de empleados con sus respectivos datos, las primeras acciones que realize fueron:
+Para el correcto funcionamiento de la app las primeras acciones a realizar son:
 
     .Crear la carpeta contenedora Proyecto
 
     .Realizar un:
+
         . pip install django (dentro del shell del Proyecto para poder utilizar el framework)
 
     .Una vez instalado django ,tuve que hacer un: 
+
         .django-admin startproyect (para darle inicio al proyecto)
 
-    .Ahora procedi a realizar un: 
+    .Realizar un: 
+
         .python manage.py startapp (para comenzar con la app)
 
     .Hay que agregar la app en el setting.py en donde estan las INSTALLED_APPS, yo agregue 'Proyect.apps.ProyectConfig' al final de las apps
 
     .Este proyecto fue realizado con la version 4.1.2 de django.
 
-Estos son los pasos que realize para darle inicio a mi proyecto, luego de esto me dedique a relizar el modelo, views, urls y templates.
+    .Crear superuser:
 
-    .En primer lugar comenze creando el modelo, el cual se crea en el file models.py. Los modelos son quienes contienen los campos y comportamientos esenciales de los datos que está almacenando. Generalmente, cada modelo se asigna a una sola tabla de base de datos. En mi caso utilize un solo modelo llamado Empleado, con los atributos de name, last_name y area que son atributos de tipo ChardField, legajo y contaco que son IntegerField, utilize un e-mail el cual es un EmailField, un date como fecha que es un DateField y finalmente un avatar que es una ImageField.
+        .python manage.py createsuperuser
+    
+    .Iniciar el servidor.
 
-    .Una vez creado el modelo, hay que hacer un python manage.py makemigrations que se encarga de crear nuevas migraciones en función de los cambios que haya realizado en sus modelos: 
-        .python manage.py makemigrations
-    inmediatamente realizada la makemigrations hay que utilizar el comando python manage.py migrate que es el encargado de aplicar las migraciones.
-        .python manage.py migrate
+        .python3 manage.py runserver
 
-A partir de este punto ya el proyecto esta listo para comenzar a trabajar con las views, templates y url.
 
-    .
+Funcionalidad del sitio web:
+    
+    .Es un registro de empleados con sus respectivos datos ,el cual nos permite ver imediatamente nombre, apellido , datos de contacto como celuar ,e-mail ,foto de dicho empleado, legajo, fecha de ingreso, etc.
+
+    .El sitio web cuenta con el login y un register, con el fin de que los empleados o dueños que sean los encargados de contratar o despedir a la gente puedan tener acceso a dicho registros y no cualquier persona.
+
+    .Con respecto al login, para la prubea pueden utilizar:
+        .username: Luciano
+        .password: 1234
+    
+    .Luego del register accedes al template principal que es donde se veran detallados algunos datos de los empleados para tenerlos presentes.
+
+    .Si se quiere saber datos mas concretos de las personas en la seccion Detail ,esta absolutamente todo los datos sobre cada uno de los empleados.
+
+    .En caso de modificaciones cuenta con una seccion actualizar, para modificar cualquier tipo de dato sobre cualquier empleado.
+
+    .Cuando esa persona ya no trabaje mas para la empresa tambien cuenta con una seccion la cual lo elimina autamaticamente de la base de datos.
+
+    .Esta web cuenta con un Profile update, el cual sirve para modificar datos sobre el usuario que esta iniciado sesion y utilizando la pagina web.
+
+
+

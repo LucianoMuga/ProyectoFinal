@@ -35,7 +35,7 @@ class DetailEmpleado(DetailView):
 class LoginEmpleado(LoginView):
     template_name = "Proyect/empleado_login.html"
     success_url = "/inicio"
-    nex_page = reverse_lazy("list-empleado")
+    # nex_page = reverse_lazy("list-empleado")
 
 class LogoutEmpleado(LogoutView):
     template_name = "Proyect/empleado_logout.html"
