@@ -14,7 +14,7 @@ Para el correcto funcionamiento de la app las primeras acciones a realizar son:
 
         . pip install django (dentro del shell del Proyecto para poder utilizar el framework)
 
-    .Una vez instalado django ,tuve que hacer un: 
+    .Una vez instalado django , hacer un: 
 
         .django-admin startproyect (para darle inicio al proyecto)
 
